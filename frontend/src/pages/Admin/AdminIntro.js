@@ -9,11 +9,11 @@ function AdminIntro() {
 
    const onFinish = async(values) => {
     try{
-      const response= await axios.post('/api/portfolio/update-intro', {
+      const response= await axios.post('https://my-portfolio-backend-6mnv.onrender.com/api/portfolio/update-intro', {
         ...values,
         _id: PortfolioData?.intro?._id,
     });
-      if(response.data.succes){
+      if(response.data.success){
         alert('Intro updated successfully');
     }else{
         alert('Failed to update intro');}}
