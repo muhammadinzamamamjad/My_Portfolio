@@ -19,7 +19,7 @@ function AppContent() {
 
   const getPortfolioData = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/portfolio/get-portfolio-data');
+      const res = await axios.get('https://my-portfolio-backend-6mnv.onrender.com/get-portfolio-data');
       dispatch(setPortfolioData(res.data));
     } catch (error) {
       console.error('Portfolio fetch error:', error);
@@ -30,7 +30,7 @@ function AppContent() {
     try {
       const token = localStorage.getItem('token');
       if (!token) return;
-      const res = await axios.get('http://localhost:5000/api/auth/verify-token', {
+      const res = await axios.get('https://my-portfolio-backend-6mnv.onrender.com/api/auth/verify-token', {
         headers: { Authorization: token },
       });
       setUserRole(res.data.role);
