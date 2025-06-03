@@ -14,7 +14,7 @@ function Register() {
 
   const handleRegister = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", form);
+      const res = await axios.post("https://my-portfolio-backend-6mnv.onrender.com/api/auth/register", form);
       if (res.data.success) {
         alert("User registered successfully!");
       }
