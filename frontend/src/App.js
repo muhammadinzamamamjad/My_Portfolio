@@ -19,7 +19,8 @@ function AppContent() {
 
   const getPortfolioData = async () => {
     try {
-      const res = await axios.get('https://my-portfolio-backend-6mnv.onrender.com/get-portfolio-data');
+      const res = await axios.get('https://my-portfolio-backend-6mnv.onrender.com/api/portfolio/get-portfolio-data');
+
       dispatch(setPortfolioData(res.data));
     } catch (error) {
       console.error('Portfolio fetch error:', error);
