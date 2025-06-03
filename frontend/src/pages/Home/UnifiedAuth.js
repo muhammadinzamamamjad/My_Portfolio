@@ -10,7 +10,7 @@ function UnifiedAuth({onLogin}) {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', loginData);
+      const res = await axios.post('https://my-portfolio-backend-6mnv.onrender.com/api/auth/login', loginData);
       if (res.data.success) {
         localStorage.setItem('token', res.data.token);
         if (onLogin) onLogin(res.data.token); // <-- notify parent
@@ -25,7 +25,7 @@ function UnifiedAuth({onLogin}) {
 
   const handleRegister = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', registerData);
+      const res = await axios.post('https://my-portfolio-backend-6mnv.onrender.com/api/auth/register', registerData);
       if (res.data.success) {
         alert("User registered successfully!");
         setMode('login');
